@@ -19,7 +19,7 @@ function setPos(clientX, clientY) {
 	overlay.style.setProperty("--x", maskX + "px");
 	overlay.style.setProperty("--y", maskY + "px");
 
-customCursor.style.transform = `translate(${clientX}px, ${clientY}px)`;
+	customCursor.style.transform = `translate(${clientX}px, ${clientY}px)`;
 }
 
 overlay.addEventListener("mousemove", (e) => setPos(e.clientX, e.clientY));
