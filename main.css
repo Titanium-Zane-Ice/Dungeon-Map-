@@ -1,0 +1,76 @@
+html,
+body {
+	height: 100%;
+	margin: 0;
+	background: #111;
+	font-family: system-ui, Segoe UI, Roboto, Helvetica, Arial;
+	cursor: none;
+}
+
+#wrap {
+	position: relative;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+}
+
+#iframe,
+#dungeon {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+#overlay {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 1);
+	-webkit-mask-image: radial-gradient(
+		circle var(--r, 110px) at var(--x, 50%) var(--y, 50%),
+		transparent 0%,
+		transparent 60%,
+		black 100%
+	);
+	mask-image: radial-gradient(
+		circle var(--r, 110px) at var(--x, 50%) var(--y, 50%),
+		transparent 0%,
+		transparent 60%,
+		black 100%
+	);
+	transition: -webkit-mask-position 0.06s linear;
+	transition: mask-position 0.06s linear;
+	pointer-events: auto;
+}
+
+#custom-cursor {
+	position: fixed;
+	top: 0;
+	left: 0;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+	z-index: 999;
+}
+
+#controls {
+	position: absolute;
+	right: 12px;
+	top: 12px;
+	background: rgba(255, 255, 255, 0.06);
+	color: #eee;
+	padding: 8px 10px;
+	border-radius: 8px;
+	backdrop-filter: blur(4px);
+	z-index: 40;
+	font-size: 13px;
+}
+#controls input[type="range"] {
+	vertical-align: middle;
+}
+#controls button {
+	margin-left: 8px;
+	padding: 6px 8px;
+	font-size: 13px;
+	cursor: pointer;
+}
